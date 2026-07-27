@@ -5,9 +5,9 @@
       {
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "Configure price threshold or percent move alert"
+              "text": "Choose what should trigger your alert."
             }
           }
         ],
