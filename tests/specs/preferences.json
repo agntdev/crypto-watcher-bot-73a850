@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Configure quiet hours and morning summary",
+    "steps": [
+      { "send": { "callback": "prefs:show" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Quiet hours: 22:00–7:00\nMorning summary: Off\nCooldown: 10 minutes" } }] },
+      { "send": { "callback": "prefs:summary" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Choose a local time for your morning market summary." } }] },
+      { "send": { "callback": "summary:08:00" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Morning summary is set for 08:00 UTC." } }] },
+      { "send": { "callback": "prefs:quiet" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Choose when price alerts should stay quiet." } }] },
+      { "send": { "callback": "quiet:23:7" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Quiet hours updated.\nQuiet hours: 23:00–7:00\nMorning summary: 08:00 UTC\nCooldown: 10 minutes" } }] }
+    ]
+  }
+]

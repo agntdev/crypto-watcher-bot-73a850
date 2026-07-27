@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Create a threshold alert with the default cooldown",
+    "steps": [
+      { "send": { "callback": "alert:create" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Choose what should trigger your alert." } }] },
+      { "send": { "callback": "alert:type:threshold" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Choose a coin." } }] },
+      { "send": { "callback": "alert:coin:threshold:bitcoin" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Choose the direction." } }] },
+      { "send": { "callback": "alert:dir:threshold:bitcoin:above" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Send the target price in USD, for example 65000." } }] },
+      { "send": { "text": "65000" }, "expect": [{ "method": "sendMessage", "payload": { "text": "Bitcoin alert saved: above $65000. Cooldown is 10 minutes." } }] },
+      { "send": { "callback": "alert:manage" }, "expect": [{ "method": "editMessageText", "payload": { "text": "Your active alerts:\n• BTC above $65000 — 10-minute cooldown" } }] }
+    ]
+  }
+]

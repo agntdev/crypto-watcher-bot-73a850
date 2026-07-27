@@ -5,9 +5,9 @@
       {
         "expect": [
           {
-            "method": "sendMessage",
+            "method": "editMessageText",
             "payload": {
-              "text": "View/edit active alerts and cooldowns"
+              "text": "No alerts yet — create one when you want a price update."
             }
           }
         ],
